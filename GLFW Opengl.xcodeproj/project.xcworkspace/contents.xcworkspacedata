@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:GLFW Opengl.xcodeproj">
+      location = "group:../GLFW Opengl/Resources/Images/grass_image.jpeg">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

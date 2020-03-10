@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		864BA48223D6BAD000D40423 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 864BA48123D6BAD000D40423 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
 		864BA48423D6BB5F00D40423 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 864BA48323D6BB5F00D40423 /* libglfw.3.3.dylib */; };
-		864BD183240FF3AD00FBB211 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 864BD182240FF3AD00FBB211 /* Window.cpp */; };
+		864BD19F2411AF1400FBB211 /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 864BD18A2411AF1400FBB211 /* image_helper.c */; };
+		864BD1A02411AF1400FBB211 /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 864BD18E2411AF1400FBB211 /* image_DXT.c */; };
+		864BD1A12411AF1400FBB211 /* SOIL2.c in Sources */ = {isa = PBXBuildFile; fileRef = 864BD1902411AF1400FBB211 /* SOIL2.c */; };
+		864BD1A22411AF1400FBB211 /* wfETC.c in Sources */ = {isa = PBXBuildFile; fileRef = 864BD19A2411AF1400FBB211 /* wfETC.c */; };
 		8650E91D23D6A772005661CB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8650E91C23D6A772005661CB /* main.cpp */; };
 		8650E92523D6A7E2005661CB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8650E92423D6A7E2005661CB /* OpenGL.framework */; };
 		8657006223E9DF39002F4BF5 /* Resources in Copy Files */ = {isa = PBXBuildFile; fileRef = 8657005F23E921FA002F4BF5 /* Resources */; };
+		866BF8E32417137F00D092C5 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 866BF8E22417137F00D092C5 /* Window.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,14 +45,35 @@
 /* Begin PBXFileReference section */
 		864BA48123D6BAD000D40423 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../usr/local/Cellar/glew/2.1.0_1/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 		864BA48323D6BB5F00D40423 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../usr/local/Cellar/glfw/3.3.1/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
-		864BD182240FF3AD00FBB211 /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
-		864BD184240FF3BC00FBB211 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
-		864BD1882411A18200FBB211 /* SOIL2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SOIL2; sourceTree = "<group>"; };
+		864BD18A2411AF1400FBB211 /* image_helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_helper.c; sourceTree = "<group>"; };
+		864BD18B2411AF1400FBB211 /* stbi_pkm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_pkm.h; sourceTree = "<group>"; };
+		864BD18C2411AF1400FBB211 /* jo_jpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jo_jpeg.h; sourceTree = "<group>"; };
+		864BD18D2411AF1400FBB211 /* wfETC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wfETC.h; sourceTree = "<group>"; };
+		864BD18E2411AF1400FBB211 /* image_DXT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_DXT.c; sourceTree = "<group>"; };
+		864BD18F2411AF1400FBB211 /* stb_image_write.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image_write.h; sourceTree = "<group>"; };
+		864BD1902411AF1400FBB211 /* SOIL2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SOIL2.c; sourceTree = "<group>"; };
+		864BD1912411AF1400FBB211 /* pkm_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pkm_helper.h; sourceTree = "<group>"; };
+		864BD1922411AF1400FBB211 /* stbi_DDS_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_c.h; sourceTree = "<group>"; };
+		864BD1932411AF1400FBB211 /* stbi_pvr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_pvr.h; sourceTree = "<group>"; };
+		864BD1942411AF1400FBB211 /* stbi_ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_ext.h; sourceTree = "<group>"; };
+		864BD1952411AF1400FBB211 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		864BD1962411AF1400FBB211 /* stbi_pvr_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_pvr_c.h; sourceTree = "<group>"; };
+		864BD1972411AF1400FBB211 /* stbi_ext_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_ext_c.h; sourceTree = "<group>"; };
+		864BD1982411AF1400FBB211 /* image_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_helper.h; sourceTree = "<group>"; };
+		864BD1992411AF1400FBB211 /* SOIL2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOIL2.h; sourceTree = "<group>"; };
+		864BD19A2411AF1400FBB211 /* wfETC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wfETC.c; sourceTree = "<group>"; };
+		864BD19B2411AF1400FBB211 /* image_DXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_DXT.h; sourceTree = "<group>"; };
+		864BD19C2411AF1400FBB211 /* stbi_pkm_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_pkm_c.h; sourceTree = "<group>"; };
+		864BD19D2411AF1400FBB211 /* stbi_DDS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS.h; sourceTree = "<group>"; };
+		864BD19E2411AF1400FBB211 /* pvr_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pvr_helper.h; sourceTree = "<group>"; };
 		8650E91923D6A772005661CB /* GLFW Opengl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "GLFW Opengl"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8650E91C23D6A772005661CB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8650E92423D6A7E2005661CB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		8657005E23E91DBC002F4BF5 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		8657005F23E921FA002F4BF5 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		866BF8D824169B5C00D092C5 /* Header-Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Header-Files"; sourceTree = "<group>"; };
+		866BF8D924169B6500D092C5 /* Spec-Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Spec-Files"; sourceTree = "<group>"; };
+		866BF8E22417137F00D092C5 /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		866BF8E42417138700D092C5 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +90,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		864BD1892411AF1400FBB211 /* SOIL2 */ = {
+			isa = PBXGroup;
+			children = (
+				864BD18A2411AF1400FBB211 /* image_helper.c */,
+				864BD18B2411AF1400FBB211 /* stbi_pkm.h */,
+				864BD18C2411AF1400FBB211 /* jo_jpeg.h */,
+				864BD18D2411AF1400FBB211 /* wfETC.h */,
+				864BD18E2411AF1400FBB211 /* image_DXT.c */,
+				864BD18F2411AF1400FBB211 /* stb_image_write.h */,
+				864BD1902411AF1400FBB211 /* SOIL2.c */,
+				864BD1912411AF1400FBB211 /* pkm_helper.h */,
+				864BD1922411AF1400FBB211 /* stbi_DDS_c.h */,
+				864BD1932411AF1400FBB211 /* stbi_pvr.h */,
+				864BD1942411AF1400FBB211 /* stbi_ext.h */,
+				864BD1952411AF1400FBB211 /* stb_image.h */,
+				864BD1962411AF1400FBB211 /* stbi_pvr_c.h */,
+				864BD1972411AF1400FBB211 /* stbi_ext_c.h */,
+				864BD1982411AF1400FBB211 /* image_helper.h */,
+				864BD1992411AF1400FBB211 /* SOIL2.h */,
+				864BD19A2411AF1400FBB211 /* wfETC.c */,
+				864BD19B2411AF1400FBB211 /* image_DXT.h */,
+				864BD19C2411AF1400FBB211 /* stbi_pkm_c.h */,
+				864BD19D2411AF1400FBB211 /* stbi_DDS.h */,
+				864BD19E2411AF1400FBB211 /* pvr_helper.h */,
+			);
+			path = SOIL2;
+			sourceTree = "<group>";
+		};
 		8650E91023D6A772005661CB = {
 			isa = PBXGroup;
 			children = (
@@ -86,12 +139,13 @@
 		8650E91B23D6A772005661CB /* GLFW Opengl */ = {
 			isa = PBXGroup;
 			children = (
-				864BD1882411A18200FBB211 /* SOIL2 */,
+				864BD1892411AF1400FBB211 /* SOIL2 */,
 				8657005F23E921FA002F4BF5 /* Resources */,
 				8650E91C23D6A772005661CB /* main.cpp */,
-				864BD182240FF3AD00FBB211 /* Window.cpp */,
-				864BD184240FF3BC00FBB211 /* Window.h */,
-				8657005E23E91DBC002F4BF5 /* Shader.h */,
+				866BF8E22417137F00D092C5 /* Window.cpp */,
+				866BF8E42417138700D092C5 /* Window.h */,
+				866BF8D924169B6500D092C5 /* Spec-Files */,
+				866BF8D824169B5C00D092C5 /* Header-Files */,
 			);
 			path = "GLFW Opengl";
 			sourceTree = "<group>";
@@ -164,8 +218,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				864BD19F2411AF1400FBB211 /* image_helper.c in Sources */,
+				866BF8E32417137F00D092C5 /* Window.cpp in Sources */,
 				8650E91D23D6A772005661CB /* main.cpp in Sources */,
-				864BD183240FF3AD00FBB211 /* Window.cpp in Sources */,
+				864BD1A02411AF1400FBB211 /* image_DXT.c in Sources */,
+				864BD1A22411AF1400FBB211 /* wfETC.c in Sources */,
+				864BD1A12411AF1400FBB211 /* SOIL2.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

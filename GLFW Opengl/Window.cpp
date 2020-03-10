@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <iostream>
 #include "Window.h"
-
 //GLEW
 #define GLEW_STATIC
 #include <GL/glew.h>
@@ -19,7 +18,7 @@ int Window::WindowOpen()
     
     int screenwidth = 0;
     int screenHeight = 0;
-    window = glfwCreateWindow(WIDTH, HEIGHT,"Minecrap", nullptr,nullptr);
+    window = glfwCreateWindow(WIDTH, HEIGHT,"Minecrapp", nullptr,nullptr);
     glfwGetFramebufferSize(window, &screenwidth, &screenHeight);
 
     if(nullptr == window)
@@ -27,7 +26,7 @@ int Window::WindowOpen()
          std::cout<<"Failed to create GLFW window"<<std::endl;
          glfwTerminate();
          return -1;
-     }
+                    }
                     glfwMakeContextCurrent(window);
                     glewExperimental=GL_TRUE;
      if(GLEW_OK != glewInit())
