@@ -33,12 +33,17 @@ void Texture:: CHOOSE_TEXTURE(unsigned int TEXTURE_NUMBER)
 {
    switch(TEXTURE_NUMBER)
    {
-       case 0:
-           break;
        case 1:
+           glActiveTexture( GL_TEXTURE_1 );
+           break;
+       case 2:
+           glActiveTexture( GL_TEXTURE_2 );
+           break;
+       case 3:
+           glActiveTexture( GL_TEXTURE_3 );
            break;
            
-       default: std::cout<<"ERROR:: CHOOSE_TEXTURE::INVALID"<<std::endl;
+       default: std::cout<<"ERROR:: CHOOSE_TEXTURE::INVALID\n"<<std::endl;
            break;
    }
 }
@@ -67,11 +72,29 @@ Texture::Texture(std::string Image_File, Wrapping wrap, Filter type)
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
 }
-    if(wrap == )
+    if(wrap == Mirrored_Repeat)
 {
-    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
-    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_Mirrored_Repeat );
+    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_Mirrored_Repeat );
 }
+        if(wrap == Clamp_Border)
+    {
+        glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_CLAMP_TO_BORDER );
+        glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_CLAMP_TO_BORDER );
+    }
+        if(wrap == Clamp_Edge)
+    {
+        glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_CLAMP_TO_EDGE );
+        glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_CLAMP_TO_EDGE );
+    }
+    
+    
+    
+    if( filter == Filter:: Nearest )
+    {
+        glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST );
+        glTexParameteri(  GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST );
+    }
     //How to pick what types the filter and wrap are
     
     int width, height;
