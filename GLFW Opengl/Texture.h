@@ -21,8 +21,7 @@ public:
     unsigned int GET_TEXTURE();
     void CHOOSE_TEXTURE(unsigned int TEXTURE_NUMBER);
     
-    
-    
+   
     //Constructor and destructor
     Texture();
     ~Texture();
@@ -30,9 +29,7 @@ public:
     Texture(std::string Image_File, Wrapping wrap, Filter type);
     void Texture_Bind();
     void Texture_Unbind();
-    
-    
-    
+   void GET_BORDER( float* color );
     
     
 private:

@@ -11,7 +11,7 @@
 // Other includes
 #include "Window.h"
 #include "Header-Files/Shader.h"
-#include "Header-Files/Texture.h"
+#include "Texture.h"
 
 
 #include <iostream>
@@ -21,6 +21,9 @@ int main( )
 {
    Window Window;
    Window.WindowOpen( );
+  
+   Texture GenTex( "Resources/Images/grass_image.jpeg", Wrapping::Repeat , Filter:: Linear );
+
     // Build and compile our shader program
    
    
@@ -102,25 +105,29 @@ int main( )
    glBindTexture( GL_TEXTURE_2D, texture );
    
    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
-     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
+   glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
    
    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
-    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
-   
-   unsigned char* image = SOIL_load_image( "Resources/Images/grass_image.jpeg" , &width,&height , 0, SOIL_LOAD_RGBA);
-   glTexImage2D( GL_TEXTURE_2D, 0 , GL_RGBA , width, height, 0, GL_RGBA , GL_UNSIGNED_BYTE, image   );
-   glGenerateMipmap( GL_TEXTURE_2D );
-   SOIL_free_image_data( image );
-   glBindTexture( GL_TEXTURE_2D, 0 );
+   glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
    
    
+   
+ unsigned char* image = SOIL_load_image( "Resources/Images/Dirt_image.jpeg" , &width,&height , 0, SOIL_LOAD_RGBA);
+  glTexImage2D( GL_TEXTURE_2D, 0 , GL_RGBA , width, height, 0, GL_RGBA , GL_UNSIGNED_BYTE, image   );
+  glGenerateMipmap( GL_TEXTURE_2D );
+  SOIL_free_image_data( image );
+  glBindTexture( GL_TEXTURE_2D, 0 );
+   
+   
+     
+ 
    
     // Game loop
     while ( !glfwWindowShouldClose( Window.WindowAccess( ) ) )
     {
         // Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
         glfwPollEvents( );
-        
+
         // Render
         // Clear the colorbuffer
         glClearColor( 0.2f, 0.3f, 0.3f, 1.0f );
@@ -129,7 +136,9 @@ int main( )
         // Draw the triangle
         ourShader.Use( );
        
-       
+       GenTex.CHOOSE_TEXTURE( 0 );
+       GenTex.Texture_Bind();
+
        //TEXTURE STUFF
        
        
