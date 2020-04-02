@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8616CACC2433C02D0074ED0E /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8616CACB2433C02D0074ED0E /* Texture.cpp */; };
+		8616CAD0243661A00074ED0E /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8616CACF243661A00074ED0E /* Camera.cpp */; };
 		864BA48223D6BAD000D40423 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 864BA48123D6BAD000D40423 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
 		864BA48423D6BB5F00D40423 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 864BA48323D6BB5F00D40423 /* libglfw.3.3.dylib */; };
 		864BD19F2411AF1400FBB211 /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 864BD18A2411AF1400FBB211 /* image_helper.c */; };
@@ -46,6 +47,8 @@
 /* Begin PBXFileReference section */
 		8616CACB2433C02D0074ED0E /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		8616CACD2433C0390074ED0E /* Texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		8616CACE243661540074ED0E /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		8616CACF243661A00074ED0E /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		864BA48123D6BAD000D40423 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../usr/local/Cellar/glew/2.1.0_1/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 		864BA48323D6BB5F00D40423 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../usr/local/Cellar/glfw/3.3.1/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		864BD18A2411AF1400FBB211 /* image_helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_helper.c; sourceTree = "<group>"; };
@@ -145,10 +148,12 @@
 				864BD1892411AF1400FBB211 /* SOIL2 */,
 				8657005F23E921FA002F4BF5 /* Resources */,
 				8650E91C23D6A772005661CB /* main.cpp */,
-				866BF8E22417137F00D092C5 /* Window.cpp */,
-				866BF8E42417138700D092C5 /* Window.h */,
+				8616CACE243661540074ED0E /* Camera.h */,
+				8616CACF243661A00074ED0E /* Camera.cpp */,
 				8616CACB2433C02D0074ED0E /* Texture.cpp */,
 				8616CACD2433C0390074ED0E /* Texture.h */,
+				866BF8E22417137F00D092C5 /* Window.cpp */,
+				866BF8E42417138700D092C5 /* Window.h */,
 				866BF8D924169B6500D092C5 /* Spec-Files */,
 				866BF8D824169B5C00D092C5 /* Header-Files */,
 			);
@@ -227,6 +232,7 @@
 				8616CACC2433C02D0074ED0E /* Texture.cpp in Sources */,
 				866BF8E32417137F00D092C5 /* Window.cpp in Sources */,
 				8650E91D23D6A772005661CB /* main.cpp in Sources */,
+				8616CAD0243661A00074ED0E /* Camera.cpp in Sources */,
 				864BD1A02411AF1400FBB211 /* image_DXT.c in Sources */,
 				864BD1A22411AF1400FBB211 /* wfETC.c in Sources */,
 				864BD1A12411AF1400FBB211 /* SOIL2.c in Sources */,
