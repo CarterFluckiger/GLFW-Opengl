@@ -14,9 +14,11 @@ class Window
 public:
     //Window( );
     //~Window( );
+
     int WindowOpen( );
     int WindowClose( );
     GLFWwindow* WindowAccess( );
+
 private:
     const int WIDTH = 1600, HEIGHT = 1000;
     GLFWwindow *window;

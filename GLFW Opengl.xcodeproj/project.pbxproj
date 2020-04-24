@@ -76,6 +76,8 @@
 		8650E91C23D6A772005661CB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8650E92423D6A7E2005661CB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		8657005F23E921FA002F4BF5 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		86584C15244E2EA4008136FD /* glm */ = {isa = PBXFileReference; lastKnownFileType = folder; name = glm; path = ../GLFOLDER/glm; sourceTree = "<group>"; };
+		86584C17244E310F008136FD /* glm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = glm; sourceTree = "<group>"; };
 		866BF8D824169B5C00D092C5 /* Header-Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Header-Files"; sourceTree = "<group>"; };
 		866BF8D924169B6500D092C5 /* Spec-Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Spec-Files"; sourceTree = "<group>"; };
 		866BF8E22417137F00D092C5 /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
@@ -148,8 +150,9 @@
 				864BD1892411AF1400FBB211 /* SOIL2 */,
 				8657005F23E921FA002F4BF5 /* Resources */,
 				8650E91C23D6A772005661CB /* main.cpp */,
-				8616CACE243661540074ED0E /* Camera.h */,
 				8616CACF243661A00074ED0E /* Camera.cpp */,
+				8616CACE243661540074ED0E /* Camera.h */,
+				86584C17244E310F008136FD /* glm */,
 				8616CACB2433C02D0074ED0E /* Texture.cpp */,
 				8616CACD2433C0390074ED0E /* Texture.h */,
 				866BF8E22417137F00D092C5 /* Window.cpp */,
@@ -163,6 +166,7 @@
 		8650E92323D6A7E1005661CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				86584C15244E2EA4008136FD /* glm */,
 				864BA48323D6BB5F00D40423 /* libglfw.3.3.dylib */,
 				864BA48123D6BAD000D40423 /* libGLEW.2.1.0.dylib */,
 				8650E92423D6A7E2005661CB /* OpenGL.framework */,
@@ -292,6 +296,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/Users/tag1/Desktop/Glfw\\ Opengl",
+					"-Luser/tag1/Desktop/GLFOLDER'\n '-L/usr/local/Cellar/glm/0.9.9.7/lib' -Luser/tag1/Desktop/GLFOLDER'",
+					/usr/local/Cellar/glm/0.9.9.7/lib,
+					/usr/local/include,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -344,6 +354,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"/Users/tag1/Desktop/Glfw\\ Opengl",
+					"-Luser/tag1/Desktop/GLFOLDER'\n '-L/usr/local/Cellar/glm/0.9.9.7/lib' -Luser/tag1/Desktop/GLFOLDER'",
+					/usr/local/Cellar/glm/0.9.9.7/lib,
+					/usr/local/include,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -359,12 +375,15 @@
 					/usr/local/include,
 					"/usr/tag1/desktop/GLFW-Opengl",
 					"/usr/tag1/desktop/GLFW-Opengl/Header-Files",
+					/usr/local/Cellar/glm/0.9.9.7/lib,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glew/2.1.0_1/lib,
 					/usr/local/Cellar/glfw/3.3.1/lib,
 					user/tag1/Desktop/GLFOLDER,
+					/usr/local/Cellar/glm/0.9.9.7/lib,
+					/usr/local/include,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -378,12 +397,15 @@
 					/usr/local/include,
 					"/usr/tag1/desktop/GLFW-Opengl",
 					"/usr/tag1/desktop/GLFW-Opengl/Header-Files",
+					/usr/local/Cellar/glm/0.9.9.7/lib,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glew/2.1.0_1/lib,
 					/usr/local/Cellar/glfw/3.3.1/lib,
 					user/tag1/Desktop/GLFOLDER,
+					/usr/local/Cellar/glm/0.9.9.7/lib,
+					/usr/local/include,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
