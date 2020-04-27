@@ -1,33 +1,15 @@
 #version 330 core
+layout (location = 0) in vec3 position;
+layout (location = 2) in vec2 texCoord;
 
+out vec2 TexCoord;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
 
 void main()
 {
-    
-    
-vec3 cameraPos =vec3(0.0f, 0.0f, 3.0f);
-vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
-vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
-    glm::vec3 up = glm::vec3( 0.0f, 1.0f, 0.0f );
-    glm::vec3 camerRight = glm::normalize(glm::cross( up, cameraDirection ));
-    glm::vec3 cameraUp = glm::cross(cameraDirection, camerRight);
-    
-    glm::mat4 view;
-    view = glm::lookA( glm::vec3( 0.0f, 0.0f, 3.0f ),
-                                        glm::vec3( 0.0f, 0.0f, 0.0f ),
-                                        glm::vec3( 0.0f, 1.0f, 0.0f ));
-    const float radius = 10.0f;
-    float camX = sin(glfwGetTime()) * radius;
-    float camZ = cos(glfwGetTime()) * radius;
-    glm::mat4 view;
-    view = glm::lookAt(camX, 0.0, camZ), glm::vec3(0.0, 0.0,0.0), glm::vec3( 0.0, 1.0, 0.0 );
-    
-    glm::vec3 cameraPos = glm::vec3( 0.0f, 0.0f, 3.0f );
-    glm::vec3 cameraFront = glm::vec3( 0.0f, 0.0f, -1.0f );
-    glm::vec3 cameraUp = glm::vec3( 0.0f, 1.0f, 0.0f  );
-    
-    view = glm::lookAt( cameraPos, cameraPos + cameraFront, cameraUp );
-    
-    
-    
+    gl_Position = projection * view * model * vec4(position, 1.0f);
+    TexCoord = vec2(texCoord.x, 1.0 - texCoord.y);
 }
