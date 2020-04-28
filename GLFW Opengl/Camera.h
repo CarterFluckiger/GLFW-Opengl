@@ -23,22 +23,23 @@
 
 #include "Window.h"
 
-enum CAMERA_MOVEMENT{FORWARD, BACKWARD , RIGHT, LEFT };
 
-const GLfloat YAW = -90.0f, PITCH = 0.0f, SPEED = 6.0f, SENSITIVITY = 0.25f, ZOOM = 45.0f;
+//Have't Implemented the Up and Down Camera Movements
+
+
+enum CAMERA_MOVEMENT{FORWARD, BACKWARD , RIGHT, LEFT , DOWN , UP};
+
+const GLfloat YAW = -90.0f;
+const GLfloat PITCH = 0.0f;
+const GLfloat SPEED = 0.25f;
+const GLfloat SENSITIVITY = 0.20f;
+const GLfloat ZOOM = 45.0f;
 
 
 
 class Camera
 {
 public:
-   
-
-   
-   
-   
-   
-   
    
    Camera( glm::vec3 position = glm::vec3( 0.0f, 0.0f, 0.0f ), glm::vec3 up = glm::vec3( 0.0f, 1.0f, 0.0f ), GLfloat yaw = YAW, GLfloat pitch = PITCH ) : front( glm::vec3( 0.0f, 0.0f, -1.0f ) ), movementSpeed( SPEED ), mouseSensitivity( SENSITIVITY ), zoom( ZOOM )
    {
@@ -89,8 +90,8 @@ public:
    
    void ProcessMouseMovement( GLfloat xOffset , GLfloat yOffset, GLboolean constrainPitch = true )
    {
-      xOffset += this->mouseSensitivity;
-      yOffset += this->mouseSensitivity;
+      xOffset *= this->mouseSensitivity;
+      yOffset *= this->mouseSensitivity;
       
       this->yaw += xOffset;
       this->pitch += yOffset;
@@ -148,18 +149,19 @@ private:
    GLfloat mouseSensitivity;
    GLfloat zoom;
    
-   void updateCameraVectors(  )
-   {
-      glm:: vec3 front;
-      front.x - cos( glm::radians(this->yaw ) )* cos(glm::radians(this->pitch) ) ;
-      front.y = sin( glm::radians( this->pitch ) );
-      front.z = sin( glm::radians(this->yaw) ) * cos( glm::radians(this->pitch) );
-      
-      this->front = glm::normalize( front );
-      this->right = glm::normalize ( glm::cross( this->front , this->worldUp) );
-      this->up = glm::normalize( glm::cross( this->right, this->front )  );
-   }
-};
+      void updateCameraVectors( )
+       {
+           // Calculate the new Front vector
+           glm::vec3 front;
+           front.x = cos( glm::radians( this->yaw ) ) * cos( glm::radians( this->pitch ) );
+           front.y = sin( glm::radians( this->pitch ) );
+           front.z = sin( glm::radians( this->yaw ) ) * cos( glm::radians( this->pitch ) );
+           this->front = glm::normalize( front );
+           // Also re-calculate the Right and Up vector
+           this->right = glm::normalize( glm::cross( this->front, this->worldUp ) );  // Normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
+           this->up = glm::normalize( glm::cross( this->right, this->front ) );
+       }
+   };
 
 
 

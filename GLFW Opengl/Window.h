@@ -19,7 +19,7 @@ public:
     int WindowClose( );
     GLFWwindow* WindowAccess( );
 
- const int WIDTH = 1600, HEIGHT = 1000;
+ const int WIDTH = 800, HEIGHT = 600;
    
 private:
     GLFWwindow *window;

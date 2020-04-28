@@ -111,7 +111,6 @@ Texture::Texture(std::string Image_File, Wrapping wrap, Filter filter)
     //How to pick what types the filter and wrap are
     
    SOIL_free_image_data( image );
-   
 }
 
 void Texture:: GET_BORDER( float* color )
