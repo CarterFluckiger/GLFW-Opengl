@@ -86,6 +86,14 @@ public:
       {
          this->position += this->right * velocity;
       }
+      if(UP == direction)
+      {
+         this->position += this->up * velocity;
+      }
+      if(DOWN == direction)
+      {
+         this->position -= this->up * velocity;
+      }
    }
    
    void ProcessMouseMovement( GLfloat xOffset , GLfloat yOffset, GLboolean constrainPitch = true )

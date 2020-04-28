@@ -283,6 +283,14 @@ void DoMovement(  )
                 {
                                 Camera.ProcessKeyboard( RIGHT , deltaTime );
                 }
+   if(keys[GLFW_KEY_SPACE] )
+   {
+      Camera.ProcessKeyboard(UP, deltaTime);
+   }
+   if(keys[GLFW_KEY_LEFT_SHIFT])
+   {
+      Camera.ProcessKeyboard(DOWN, deltaTime);
+   }
 }
                            
                                 
