@@ -11,6 +11,8 @@
 
 #include "SOIL2.h"
 
+#include <string>
+
 Texture::Texture()
 {
     TEXTURE_TAG = 0;

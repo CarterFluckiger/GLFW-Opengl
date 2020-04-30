@@ -128,24 +128,37 @@ int main()
           -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
       };
    
-   
 
-
+  int Elements = 15245;
    
-   glm::vec3 cubePositions[] =
+   glm::vec3 * cubePositions;
+   cubePositions = new glm::vec3 [Elements];
+   
+   int z = 0;
+   for(int j = 0; j<= 15; j++)
    {
-       glm::vec3( 0.0f, 0.0f, 0.0f ),
-       glm::vec3( 2.0f, 5.0f, -15.0f ),
-       glm::vec3( -1.5f, -2.2f, -2.5f ),
-       glm::vec3( -3.8f, -2.0f, -12.3f ),
-       glm::vec3( 2.4f, -0.4f, -3.5f ),
-       glm::vec3( -1.7f, 3.0f, -7.5f ),
-       glm::vec3( 1.3f, -2.0f, -2.5f ),
-       glm::vec3( 1.5f, 2.0f, -2.5f ),
-       glm::vec3( 1.5f, 0.2f, -1.5f ),
-       glm::vec3( -1.3f, 1.0f, -1.5f )
-   };
-   
+        cubePositions[Elements] =
+      {
+       glm::vec3(j , z, z),
+      };
+      Elements--;
+      for(int p =0; p<=63; p++)
+      {
+         cubePositions[Elements] =
+         {
+            glm::vec3(j,p,z)
+         };
+         Elements--;
+         for(int r =0; r<=15; r++)
+         {
+            cubePositions[Elements] =
+            {
+               glm::vec3(j,p,r)
+            };
+            Elements--;
+      }
+   }
+   }
    
 
 
@@ -169,14 +182,13 @@ int main()
 
  
    //Texture coordinate attribute
-   glVertexAttribPointer( 2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof( GLfloat ), ( GLvoid * )( 3* sizeof( GLfloat ) ) );
+   glVertexAttribPointer( 2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof( GLfloat ), ( GLvoid * )( 3* sizeof( GLfloat ) ) );
     glEnableVertexAttribArray( 2 );
 
     glBindVertexArray( 0 ); // Unbind VAO
    
 
-   Texture GenTex( "Resources/Images/Grass_image.jpeg", Wrapping::Clamp_Edge , Filter:: Linear );
-   
+   Texture  GenTex( "Resources/Images/Dirt_image.jpeg", Wrapping::Clamp_Edge , Filter:: Nearest);
 
    
     // Game loop
@@ -204,11 +216,13 @@ int main()
        
       GenTex.CHOOSE_TEXTURE( 0 );
        GenTex.Texture_Bind();
+
        
        
 
        glUniform1i( glGetUniformLocation(ourShader.Program, "ourTexture1"),0 );
        //This uses the 0 texture which is set to dirt right now
+         
       
        
        glm::mat4 projection(1);
@@ -233,11 +247,11 @@ int main()
        
         glBindVertexArray( VAO );
       
-       for(GLuint i = 0; i <10; i++)
+       for(GLuint i = 0; i <15245; i++)
        {
           glm::mat4 model(1);
           model = glm:: translate(model, cubePositions[i]);
-          GLfloat angle =20.0f * i;
+          GLfloat angle =0.0f * i;
           
           model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f) );
            glUniformMatrix4fv( modelloc , 1, GL_FALSE, glm::value_ptr( model ) );
@@ -285,11 +299,12 @@ void DoMovement(  )
                 }
    if(keys[GLFW_KEY_SPACE] )
    {
-      Camera.ProcessKeyboard(UP, deltaTime);
+ Camera.ProcessKeyboard(UP, deltaTime);
    }
    if(keys[GLFW_KEY_LEFT_SHIFT])
    {
-      Camera.ProcessKeyboard(DOWN, deltaTime);
+        Camera.ProcessKeyboard(DOWN, deltaTime);
+   
    }
 }
                            
