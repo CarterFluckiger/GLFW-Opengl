@@ -31,7 +31,7 @@ enum CAMERA_MOVEMENT{FORWARD, BACKWARD , RIGHT, LEFT , DOWN , UP};
 
 const GLfloat YAW = -90.0f;
 const GLfloat PITCH = 0.0f;
-const GLfloat SPEED = 0.35f;
+const GLfloat SPEED = 0.15f;
 const GLfloat SENSITIVITY = 0.20f;
 const GLfloat ZOOM = 45.0f;
 
@@ -43,7 +43,7 @@ public:
    
 
    
-   Camera( glm::vec3 position = glm::vec3( 0.0f, 65.0f, 0.0f ), glm::vec3 up = glm::vec3( 0.0f, 1.0f, 0.0f ), GLfloat yaw = YAW, GLfloat pitch = PITCH ) : front( glm::vec3( 0.0f, 0.0f, -1.0f ) ), movementSpeed( SPEED ), mouseSensitivity( SENSITIVITY ), zoom( ZOOM )
+   Camera( glm::vec3 position = glm::vec3( 0.0f, 2.0f, 0.0f ), glm::vec3 up = glm::vec3( 0.0f, 1.0f, 0.0f ), GLfloat yaw = YAW, GLfloat pitch = PITCH ) : front( glm::vec3( 0.0f, 0.0f, -1.0f ) ), movementSpeed( SPEED ), mouseSensitivity( SENSITIVITY ), zoom( ZOOM )
    {
       this->position = position;
       this->worldUp = up;

@@ -129,37 +129,40 @@ int main()
       };
    
 
-  int Elements = 15245;
+  int Elements =5120;
+   int otherelments = Elements;
    
    glm::vec3 * cubePositions;
    cubePositions = new glm::vec3 [Elements];
    
    int z = 0;
-   for(int j = 0; j<= 15; j++)
+   for(int l = 0; l<=1;l++)
+   {
+      int m = 0;
+      if(l == 1)
+      {
+         m=20;
+      }
+   for(int p = 0; p<=9; p++)
+   {
+   for(int j =0;  j <= 15; j++)
    {
         cubePositions[Elements] =
       {
-       glm::vec3(j , z, z),
+       glm::vec3(j+m , p, z)
       };
       Elements--;
-      for(int p =0; p<=63; p++)
+      for(int r = 1; r<=15;r++)
       {
          cubePositions[Elements] =
          {
-            glm::vec3(j,p,z)
+            glm::vec3( j+m, p, r)
          };
          Elements--;
-         for(int r =0; r<=15; r++)
-         {
-            cubePositions[Elements] =
-            {
-               glm::vec3(j,p,r)
-            };
-            Elements--;
       }
    }
    }
-   
+   }
 
 
    
@@ -187,8 +190,9 @@ int main()
 
     glBindVertexArray( 0 ); // Unbind VAO
    
-
-   Texture  GenTex( "Resources/Images/Dirt_image.jpeg", Wrapping::Clamp_Edge , Filter:: Nearest);
+    Texture  GenStone( "Resources/Images/Stone_image.jpeg", Wrapping::Clamp_Edge , Filter:: Nearest);
+   Texture  GenTex( "Resources/Images/stb_image.jpeg", Wrapping::Clamp_Edge , Filter:: Nearest);
+  
 
    
     // Game loop
@@ -208,19 +212,21 @@ int main()
 
         // Render
         // Clear the colorbuffer
-        glClearColor( 0.2f, 0.3f, 0.3f, 1.0f );
+        glClearColor( 0.3f, 0.3f, 1.3f, 1.0f );
         glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
         
         // Draw the triangles underneath
         ourShader.Use( );
-       
+   
       GenTex.CHOOSE_TEXTURE( 0 );
        GenTex.Texture_Bind();
 
+       GenStone.CHOOSE_TEXTURE(1);
+             GenStone.Texture_Bind();
        
-       
-
+   glUniform1i( glGetUniformLocation(ourShader.Program, "ourTexture2"),1 );
        glUniform1i( glGetUniformLocation(ourShader.Program, "ourTexture1"),0 );
+       
        //This uses the 0 texture which is set to dirt right now
          
       
@@ -240,19 +246,15 @@ int main()
        
        //TEXTURE STUFF
        
-
-    
-     
-       
        
         glBindVertexArray( VAO );
       
-       for(GLuint i = 0; i <15245; i++)
+       for(GLuint i = 0; i <otherelments; i++)
        {
           glm::mat4 model(1);
           model = glm:: translate(model, cubePositions[i]);
           GLfloat angle =0.0f * i;
-          
+     
           model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f) );
            glUniformMatrix4fv( modelloc , 1, GL_FALSE, glm::value_ptr( model ) );
           
