@@ -10,3 +10,5 @@ void main()
 {
     color = texture(ourTexture1, TexCoord);
 }
+// This is the texture frag file for adding a texture to a shader/shape
+//This is an old file that is not used an longer.  I kept it as record if I have to revert back to it

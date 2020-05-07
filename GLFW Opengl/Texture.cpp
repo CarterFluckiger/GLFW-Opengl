@@ -12,24 +12,23 @@
 #include "SOIL2.h"
 
 #include <string>
+//Constructor
 
 Texture::Texture()
 {
     TEXTURE_TAG = 0;
    std::cout<<"ERROR:CALLED::DEFAULT_TEXTURE"<<std::endl;
 }
-
+//Destructor
 Texture::~Texture()
 {
 }
 
-
+//Bind and Unbind textures
 void Texture::Texture_Bind()
 {
     glBindTexture(GL_TEXTURE_2D, TEXTURE_TAG);
 }
-
-
 void Texture:: Texture_Unbind()
 {
     glBindTexture( GL_TEXTURE_2D , 0 );
@@ -38,6 +37,7 @@ void Texture:: Texture_Unbind()
 
 void Texture:: CHOOSE_TEXTURE(unsigned int TEXTURE_NUMBER)
 {
+   //Switch statement for the texture identifiers
    switch(TEXTURE_NUMBER)
    {
       case 0:
@@ -52,14 +52,12 @@ void Texture:: CHOOSE_TEXTURE(unsigned int TEXTURE_NUMBER)
        case 3:
            glActiveTexture( GL_TEXTURE3 );
            break;
-           
+          //Couts error message
        default: std::cout<<"ERROR:: CHOOSE_TEXTURE::INVALID\n"<<std::endl;
            break;
    }
 }
-
-
-    
+//Returns private member in TEXTURE_TAG
 unsigned int Texture::GET_TEXTURE()
 {
     return TEXTURE_TAG;
@@ -76,7 +74,8 @@ Texture::Texture(std::string Image_File, Wrapping wrap, Filter filter)
 
    
    
-   
+   //Checks the wrap and filter than the user wants to use for the respective texture
+   //Then runs the appropriate glTexParamenteri function
     if(wrap == Repeat)
 {
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
@@ -99,7 +98,7 @@ Texture::Texture(std::string Image_File, Wrapping wrap, Filter filter)
     }
    
    int width, height;
-
+//Uses soil to create a pointer to the image
     unsigned char* image = SOIL_load_image( Image_File.c_str(  ) , &width,&height , 0, SOIL_LOAD_RGBA);
     glTexImage2D( GL_TEXTURE_2D, 0 , GL_RGBA , width, height, 0, GL_RGBA , GL_UNSIGNED_BYTE, image   );
       glGenerateMipmap( GL_TEXTURE_2D );

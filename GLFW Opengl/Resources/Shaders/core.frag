@@ -10,3 +10,6 @@ void main()
 {
     color = texture(ourTexture1, TexCoord)
 }
+
+//Original fragment file that is used to add color to triangles
+//This is an old file that is not used an longer.  I kept it as record if I have to revert back to it

@@ -5,6 +5,7 @@ layout (location = 2) in vec2 texCoord;
 
 out vec3 ourColor;
 out vec2 TexCoord;
+//Uses different TexCoord this time
 
 void main()
 {
@@ -13,3 +14,5 @@ void main()
     
     TexCoord = vec2 (texCoord.x , 1.0-texCoord.y);
 }
+// This is the texture vertex shader file for adding a texture to a shader/shape
+//This is an old file that is not used an longer.  I kept it as record if I have to revert back to it
