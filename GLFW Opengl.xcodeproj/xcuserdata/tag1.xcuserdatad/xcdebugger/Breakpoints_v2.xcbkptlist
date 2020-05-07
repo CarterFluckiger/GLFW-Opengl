@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
-            landmarkName = "Shader(vertexPath, fragmentPath)"
-            landmarkType = "7">
+            landmarkName = "Shader"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "241954D4-A044-42F1-A45B-70C338D03B99 - 712384dd0e675d22"

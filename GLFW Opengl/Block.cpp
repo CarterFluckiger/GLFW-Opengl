@@ -1,11 +1,12 @@
 #include "Block.h"
 #include "Texture.h"
-#include "Header-Files/Shader.h"
+#include "Shader.h"
 
 
 
 // ***** THIS WHOLE CLASS IS NOT "USED" the code is in the main
-// I could not get the info to move succefully to the main
+// I could not get the info to move succefully to the main yet but
+// it is a very close to completed class
 
 void Block::MakeChunk()
 {

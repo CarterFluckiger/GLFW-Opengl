@@ -23,10 +23,10 @@
 
 // Other includes
 #include "Window.h"
-#include "Header-Files/Shader.h"
+#include "Shader.h"
 #include "Texture.h"
 #include "Camera.h"
-//#include "Block.h"
+#include "Block.h"
 
 #include <time.h>
 #include <iostream>
@@ -189,10 +189,14 @@ int main()
       Elements--;
       for(int r = 1; r<=15;r++)
       {
-         int s = chunk[f].height;
+         //I commented out this chunk to make the height different to make a
+         //square chunk, but if height is wanted it must be uncommented and s
+         // would need to replace r in the below glm::vec3 statement
+         //int s = chunk[f].height;
+
          cubePositions[Elements] =
          {
-            glm::vec3( j+m, p, s)
+            glm::vec3( j+m, p, r)
          };
          f++;
          Elements--;

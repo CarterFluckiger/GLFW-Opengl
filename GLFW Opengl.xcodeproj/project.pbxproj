@@ -85,6 +85,7 @@
 		866BF8D924169B6500D092C5 /* Spec-Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Spec-Files"; sourceTree = "<group>"; };
 		866BF8E22417137F00D092C5 /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
 		866BF8E42417138700D092C5 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		86DB096D24639EA00049F329 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +162,7 @@
 				8616CACB2433C02D0074ED0E /* Texture.cpp */,
 				8616CACD2433C0390074ED0E /* Texture.h */,
 				866BF8E22417137F00D092C5 /* Window.cpp */,
+				86DB096D24639EA00049F329 /* Shader.h */,
 				866BF8E42417138700D092C5 /* Window.h */,
 				866BF8D924169B6500D092C5 /* Spec-Files */,
 				866BF8D824169B5C00D092C5 /* Header-Files */,
